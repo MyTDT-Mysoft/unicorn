@@ -21,7 +21,7 @@ jobs:
               name: 'windows-x86 MINGW64 shared',
               shared: 'yes',
               mingw: MINGW32,
-              mingw-arch: x86,
+              mingw-arch: i686,
               artifact: 'windows_mingw32_shared.7z',
               build_type: 'Release',
               archiver: '7z a',
@@ -35,7 +35,7 @@ jobs:
               name: 'windows-x86 MINGW64 static',
               shared: 'no',
               mingw: MINGW32,
-              mingw-arch: x86_64,
+              mingw-arch: i686,
               artifact: 'windows_mingw32_static.7z',
               build_type: 'Release',
               archiver: '7z a',
@@ -112,7 +112,7 @@ jobs:
         cmake --build . --config ${{ matrix.config.build_type }}
         cmake --install . --strip --config ${{ matrix.config.build_type }}
         ctest -VV -C ${{ matrix.config.build_type }}
-        mv Debug instdir
+        mv Release instdir
 
     - name: '🛠️ Win MSVC 32 setup'
       if: contains(matrix.config.name, 'MSVC 32')
@@ -139,7 +139,7 @@ jobs:
         cmake --build . --config ${{ matrix.config.build_type }}
         cmake --install . --strip --config ${{ matrix.config.build_type }}
         ctest -VV -C ${{ matrix.config.build_type }}
-        mv Debug instdir
+        mv Release instdir
 
     - name: '🚧 Win MINGW build'
       if: contains(matrix.config.mingw, 'MINGW')

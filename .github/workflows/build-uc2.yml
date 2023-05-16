@@ -1,19 +1,6 @@
 name: Build UC2
 
-on: 
-  push:
-    paths-ignore:
-      - ".gitignore"
-      - "docs/**"
-      - "README"
-      - "CREDITS.TXT"
-      - "COPYING_GLIB"
-      - "COPYING.LGPL2"
-      - "AUTHORS.TXT"
-      - "CHANGELOG"
-      - "COPYING"
-  pull_request:
-
+on: [workflow_dispatch]
 
 env:
   CI: true

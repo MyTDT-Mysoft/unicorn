@@ -13,34 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - { 
-              os: windows-2019,
-              arch: x64,
-              python-arch: x64,
-              python-ver: '3.8',
-              name: 'windows-x64 MINGW64 shared',
-              shared: 'yes',
-              mingw: MINGW64,
-              mingw-arch: x86_64,
-              artifact: 'windows_mingw64.7z',
-              build_type: 'Debug',
-              archiver: '7z a',
-              generators: 'Ninja'
-            }
-          - { 
-              os: windows-2019,
-              arch: x64,
-              python-arch: x64,
-              python-ver: '3.8',
-              name: 'windows-x64 MINGW64 static',
-              shared: 'no',
-              mingw: MINGW64,
-              mingw-arch: x86_64,
-              artifact: 'windows_mingw64.7z',
-              build_type: 'Debug',
-              archiver: '7z a',
-              generators: 'Ninja'
-            }
           # - { # This fails randomly which can't be reproduced.
           #     os: windows-2019,
           #     arch: x64,

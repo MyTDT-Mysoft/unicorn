@@ -1,7 +1,7 @@
 name: Build UC2
 
-on:
- push:
+on: 
+  push:
     paths-ignore:
       - ".gitignore"
       - "docs/**"
@@ -13,6 +13,7 @@ on:
       - "CHANGELOG"
       - "COPYING"
   pull_request:
+
 
 env:
   CI: true

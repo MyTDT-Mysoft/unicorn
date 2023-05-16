@@ -13,33 +13,33 @@ jobs:
       fail-fast: false
       matrix:
         config:
-           - { 
-               os: windows-2019,
-               arch: x86,
-               python-arch: x86,
-               python-ver: '3.8',
-               name: 'windows-x86 MINGW32 shared',
-               shared: "yes",
-               mingw: MINGW32,
-               mingw-arch: i686,
-               artifact: 'windows_mingw32_shared.7z',
-               build_type: 'Debug',
-               archiver: '7z a',
-               generators: 'Ninja'
-             }
-           - { 
-               os: windows-2019,
-               arch: x86,
-               python-arch: x86,
-               python-ver: '3.8',
-               name: 'windows-x86 MINGW32 static',
-               shared: "no",
-               mingw: MINGW32,
-               mingw-arch: i686,
-               artifact: 'windows_mingw32_static.7z',
-               build_type: 'Debug',
-               archiver: '7z a',
-               generators: 'Ninja'
+          - { 
+              os: windows-2019,
+              arch: x64,
+              python-arch: x64,
+              python-ver: '3.8',
+              name: 'windows-x64 MINGW64 shared',
+              shared: 'yes',
+              mingw: MINGW64,
+              mingw-arch: x86_64,
+              artifact: 'windows_mingw64.7z',
+              build_type: 'Debug',
+              archiver: '7z a',
+              generators: 'Ninja'
+            }
+          - { 
+              os: windows-2019,
+              arch: x64,
+              python-arch: x64,
+              python-ver: '3.8',
+              name: 'windows-x64 MINGW64 static',
+              shared: 'no',
+              mingw: MINGW64,
+              mingw-arch: x86_64,
+              artifact: 'windows_mingw64.7z',
+              build_type: 'Debug',
+              archiver: '7z a',
+              generators: 'Ninja'
             }
           - {
               os: windows-2019,
